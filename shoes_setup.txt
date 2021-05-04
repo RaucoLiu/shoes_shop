@@ -1,0 +1,249 @@
+
+create database shoes default character set utf8;
+use shoes;
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- 資料庫： `shoes`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `detail`
+--
+
+CREATE TABLE `detail` (
+  `id` int(11) NOT NULL,
+  `pdId` smallint(5) DEFAULT NULL,
+  `pdColor` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `detail`
+--
+
+INSERT INTO `detail` (`id`, `pdId`, `pdColor`) VALUES
+(1, 1, 'Black'),
+(2, 1, 'Alloy'),
+(3, 1, 'White'),
+(4, 1, 'Blueberry'),
+(5, 2, 'Sand'),
+(6, 2, 'Sky');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `mid` int(11) DEFAULT NULL,
+  `img` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `images`
+--
+
+INSERT INTO `images` (`id`, `mid`, `img`) VALUES
+(1, 1, 'LT01-Black'),
+(2, 1, 'LT01-black-02'),
+(3, 1, 'LT01-black-03'),
+(4, 1, 'LT01-black-04'),
+(5, 2, 'LT01-Alloy'),
+(6, 2, 'LT01-alloy-02'),
+(7, 2, 'LT01-alloy-03'),
+(8, 2, 'LT01-alloy-04'),
+(9, 2, 'LT01-alloy-05'),
+(10, 3, '96A7260-e1565186598952-3000x0-c-default'),
+(11, 3, 'Schermafbeelding-2019-06-07-om-15.08.26-e1559912944879-1000x0-c-default'),
+(12, 3, 'LT01-white-02'),
+(13, 3, 'LT01-white-03'),
+(14, 3, 'LT01-white-07'),
+(15, 4, 'LT01-Blueberry'),
+(16, 4, 'LT01-blueberry-02'),
+(17, 4, 'LT01-blueberry-03'),
+(18, 4, 'LT01-blueberry-04'),
+(19, 5, 'LT-01-Premium-Suede-Back'),
+(20, 5, 'LT-01-Premium-Suede-Sand-Front'),
+(21, 5, 'LT-01-Premium-Suede-Sole'),
+(22, 6, 'FW20-packshots-july-020'),
+(23, 6, 'FW20-packshots-july-022'),
+(24, 6, 'FW20-packshots-july-023');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `odd`
+--
+
+CREATE TABLE `odd` (
+  `id` int(11) NOT NULL,
+  `pdId` smallint(5) DEFAULT NULL,
+  `pdName` varchar(30) DEFAULT NULL,
+  `price` smallint(5) DEFAULT NULL,
+  `pdType` varchar(5) DEFAULT NULL,
+  `content` varchar(300) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `odd`
+--
+
+INSERT INTO `odd` (`id`, `pdId`, `pdName`, `price`, `pdType`, `content`) VALUES
+(1, 1, 'LT 01', 239, 'm', 'Handmade in Portugal from premium nubuck leather. Full calf-skin lining.'),
+(3, 2, 'LT 01 Premium', 269, 'w', 'Every season, we offer a premium rendition of the LT 01. This year it turned out to be the leanest LT 01 we’ve made so far. The upper is made from a single piece of leather.');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `pdId` varchar(30) DEFAULT NULL,
+  `sizeId` tinyint(3) DEFAULT NULL,
+  `qty` tinyint(3) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `size`
+--
+
+CREATE TABLE `size` (
+  `sizeId` int(11) NOT NULL,
+  `pdType` varchar(5) DEFAULT NULL,
+  `size` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `size`
+--
+
+INSERT INTO `size` (`sizeId`, `pdType`, `size`) VALUES
+(1, 'm', 'EU 36'),
+(2, 'm', 'EU 37'),
+(3, 'm', 'EU 38'),
+(4, 'm', 'EU 39 | US 6 | UK 5'),
+(5, 'm', 'EU 40 | US 7 | UK 6'),
+(6, 'm', 'EU 41 | US 8 | UK 7'),
+(7, 'm', 'EU 42 | US 9 | UK 8'),
+(8, 'm', 'EU 43 | US 10 | UK 9'),
+(9, 'm', 'EU 44 | US 11 | UK 10'),
+(10, 'm', 'EU 45 | US 12 | UK 11'),
+(11, 'm', 'EU 46 | US 13 | UK 12'),
+(12, 'w', 'EU 36 | US 3 | UK 2'),
+(13, 'w', 'EU 37 | US 4 | UK 3'),
+(14, 'w', 'EU 38 | US 5 | UK 4'),
+(15, 'w', 'EU 39 | US 6 | UK 5');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `userId` smallint(5) DEFAULT NULL,
+  `userName` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 已傾印資料表的索引
+--
+
+--
+-- 資料表索引 `detail`
+--
+ALTER TABLE `detail`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `odd`
+--
+ALTER TABLE `odd`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `size`
+--
+ALTER TABLE `size`
+  ADD PRIMARY KEY (`sizeId`);
+
+--
+-- 資料表索引 `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
+--
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `detail`
+--
+ALTER TABLE `detail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `odd`
+--
+ALTER TABLE `odd`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `size`
+--
+ALTER TABLE `size`
+  MODIFY `sizeId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

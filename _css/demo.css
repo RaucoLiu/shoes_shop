@@ -1,0 +1,1127 @@
+/* ----------------第1頁index的css內容----------------- */
+
+
+/* ----------------第1頁index的css內容----------------- */
+
+
+/* ----------------第1頁index的css內容----------------- */
+
+
+/* ----------------第1頁index的css內容----------------- */
+
+
+/* ----------------第1頁index的css內容----------------- */
+
+h6 {
+    font-size: medium;
+}
+
+span {
+    font-size: smaller;
+}
+
+
+/*---- p文字底線處理 ----*/
+
+p {
+    display: inline-block;
+    position: relative;
+    font-size: smaller;
+    /* background-color: chartreuse; */
+    margin-bottom: 0px;
+}
+
+p:after {
+    content: '';
+    width: 0px;
+    height: 1px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+    /* background: rgba(0, 0, 0, 0.5); */
+    transition: 500ms;
+}
+
+p.p-change:after {
+    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(255, 255, 255, 0.5); */
+}
+
+p:hover:after {
+    width: 100%;
+}
+
+p:not(:hover):after {
+    right: 0;
+    left: auto;
+}
+
+.smart-scroll-2 p:nth-of-type(2)::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* background: rgba(255, 255, 255, 0.5); */
+    background: rgba(0, 0, 0, 0.5);
+    /* transition: 500ms; */
+}
+
+h2>a,
+h2>a:hover,
+p>a,
+p>a:hover,
+form>p>a,
+form>p>a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+form>p>a {
+    display: inline-block;
+    position: relative;
+    font-size: smaller;
+    /* color: blue; */
+    margin-bottom: 0px;
+}
+
+form>p>a:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.5); */
+    transition: 500ms;
+}
+
+form>p>a:hover:after {
+    width: 0px;
+    right: 0;
+    left: auto;
+}
+
+
+/*---- Top-bar 處理 ----*/
+
+
+/*---- Top-bar 處理 ----*/
+
+
+/*---- Top-bar 處理 ----*/
+
+.smart-scroll {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    line-height: 4rem;
+    /* line-height: 4rem 這個數值在自適應時會出現問題 */
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    padding-left: 1rem;
+    z-index: 1030;
+    background-color: transparent;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.fa-bars {
+    display: none;
+}
+
+.smart-scroll h2,
+.smart-scroll p {
+    left: 2rem;
+    margin-left: 1rem;
+    line-height: 2;
+}
+
+@media (max-width: 900px) {
+    .smart-scroll {
+        display: flex;
+        flex-direction: column;
+        color: black;
+        background-color: white;
+    }
+    .smart-scroll>div:nth-of-type(1) {
+        display: flex;
+        flex-direction: row;
+    }
+    .smart-scroll>div:nth-of-type(2) {
+        display: none;
+    }
+    .smart-scroll>div>a:link {
+        color: black;
+    }
+    .fa-bars {
+        color: black;
+        display: inline;
+        position: fixed;
+        line-height: 2.3;
+        font-size: 1.5rem;
+    }
+    .smart-scroll>div:nth-of-type(1)>h2 {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: x-large;
+    }
+    .smart-scroll h2,
+    .smart-scroll p {
+        left: 0;
+        margin-left: 0;
+    }
+}
+
+
+/* 當fa-bars第一次點擊時*/
+
+
+/*.smart-scroll.addClass'responsive'*/
+
+
+/*.smart-scroll.responsive的下拉選單出現設定*/
+
+@media (max-width: 900px) {
+    .smart-scroll.responsive>div:nth-of-type(2) {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.4rem;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        /* display: none; */
+    }
+    .smart-scroll.responsive>div:nth-of-type(2)>p {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .smart-scroll.responsive>div:nth-of-type(2)>p:after {
+        background-color: black;
+    }
+}
+
+.color {
+    background-color: white;
+    color: black;
+    transition: color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.scrolled-down {
+    /* transform: translateY(-100%); */
+    /* transition: all 0.3s ease-in-out; */
+    transition: opacity 0.3s ease-in;
+    -webkit-transition: opacity 0.3s ease-in;
+    opacity: 0;
+}
+
+.scrolled-up {
+    /* transform: translateY(0); */
+    /* transition: all 0.3s ease-in-out; */
+    transition: opacity 0.3s ease-in;
+    -webkit-transition: opacity 0.3s ease-in;
+    opacity: 1;
+}
+
+.white-bg-change {
+    position: fixed;
+    z-index: 1020;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    /* display: none; */
+    /* -webkit-animation: alpha100 2s infinite normal ease-in-out; */
+    animation: alpha0 1s infinite normal ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes alpha0 {
+    0% {
+        display: 'block';
+        opacity: 1;
+        z-index: 1020;
+    }
+    1% {
+        display: block;
+        opacity: 1;
+        z-index: 1020;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+
+/*---- carousel處理 ----*/
+
+
+/*---- carousel播放速度 ----*/
+
+.carousel-inner .carousel-item img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+
+/*---- carousel字上升處理 ----*/
+
+.carousel-fade h5 {
+    /* transform: translateY(-50px); */
+    -webkit-animation: floatBubble 1.5s infinite normal ease-in-out;
+    animation: floatBubble 1.5s infinite normal ease-in-out;
+    animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.carousel-fade h6 {
+    /* transform: translateY(-50px); */
+    -webkit-animation: floatBubble 1.5s infinite normal ease-in-out;
+    animation: floatBubble 1.5s infinite normal ease-in-out;
+    animation-iteration-count: 1;
+    animation-delay: .15s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.carousel-item {
+    overflow: hidden;
+}
+
+.carousel-item:nth-of-type(1)>img {
+    /* width: 100%; */
+    /* display: block; */
+    content: url("../_img/junko-nakase-Q-72wa9-7Dg-unsplash.jpg");
+}
+
+@media(max-width: 700px) {
+    .carousel-item:nth-of-type(1)>img {
+        /* width: 100%; */
+        /* display: block; */
+        content: url("../_img/SALE-Banner2-mobile-50-1000x0-c-default.jpg");
+    }
+}
+
+@-webkit-keyframes floatBubble {
+    0% {
+        transform: translateY(80px);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes floatBubble {
+    0% {
+        transform: translateY(80px);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* 內容處理 */
+
+.index-contentDiv1,
+.index-contentDiv2 {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    /* background-color: aqua; */
+}
+
+.index-contentDiv1>.card {
+    margin-top: 8%;
+    border: 0;
+    width: 25vw;
+    /* height: 50vh; */
+}
+
+.index-contentDiv2>.card {
+    margin-top: 4%;
+    border: 0;
+    width: 43vw;
+    /* height: 60vh; */
+}
+
+.index-contentDiv1>.card>.card-img-top,
+.index-contentDiv2>.card>.card-img-top {
+    object-fit: cover;
+}
+
+.index-contentDiv1 img {
+    height: 25vw;
+}
+
+.index-contentDiv2 img {
+    /* width: 50%; */
+    height: 30vw;
+    /* height: 80%; */
+}
+
+.footerDiv {
+    width: 90vw;
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 100px;
+    /* background-color: aquamarine; */
+    /* opacity: 0; */
+}
+
+.opacity-change {
+    transition: opacity 0.5s ease-in;
+    -webkit-transition: opacity 0.5s ease-in;
+    opacity: 1;
+}
+
+
+/* ----------------第2頁man_page的css內容----------------- */
+
+
+/* ----------------第2頁man_page的css內容----------------- */
+
+
+/* ----------------第2頁man_page的css內容----------------- */
+
+
+/* ----------------第2頁man_page的css內容----------------- */
+
+
+/* ----------------第2頁man_page的css內容----------------- */
+
+
+/*---- Top-bar 處理 ----*/
+
+
+/*---- Top-bar 處理 ----*/
+
+
+/*---- Top-bar 處理 ----*/
+
+.smart-scroll-2 {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    line-height: 4rem;
+    /* line-height: 4rem 這個數值在自適應時會出現問題 */
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    padding-left: 1rem;
+    z-index: 1030;
+    background-color: white;
+    color: black;
+    transition: all 0.5s ease-in-out;
+    /* background-color: tomato; */
+}
+
+
+/* 右上_購物車_數字 */
+
+.shopNumber {
+    position: fixed;
+    z-index: 1080;
+    top: 29px;
+    right: 35px;
+    background-color: black;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.9;
+    width: 30px;
+    height: 30px;
+}
+
+.shopNumberTable {
+    position: fixed;
+    background-color: #fff;
+    top: 10px;
+    right: 10px;
+    width: 25rem;
+    z-index: 1040;
+    /* background-color: thistle; */
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+    /* 需要進行變動的值 */
+}
+
+.shopNumberTable.responsive {
+    max-height: 800px;
+    transition: max-height .8s ease-out;
+}
+
+.shopNumberTable>table {
+    width: 18rem;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: small;
+}
+
+
+.shopNumberTable>table>tbody>tr>th {
+    font-weight: normal;
+}
+
+.shopNumberTable>table>tbody>tr:nth-of-type(1) {
+    line-height: 1.5;
+    /* background-color: thistle; */
+}
+
+.shopNumberTable>table>tbody>tr>td {
+    padding: 5px 0;
+    text-align: right;
+    /* background-color: thistle; */
+}
+
+.shopNumberTable>p {
+    top: 25px;
+    left: 10%;
+}
+
+.shopNumber_dropdown>form>button {
+    width: 40%;
+    margin-left: 50%;
+    margin-right: 10%;
+    font-size: small;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+
+.smart-scroll-2 h2,
+.smart-scroll-2 p {
+    left: 2rem;
+    margin-left: 1rem;
+    line-height: 2;
+}
+
+.smart-scroll-2 p:after {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.darkDiv {
+    margin-top: 0;
+    padding-top: 0;
+    position: fixed;
+    z-index: 1035;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.darkDiv>h2>a {
+    display: none;
+}
+
+
+@media (max-width: 900px) {
+    .smart-scroll-2 {
+        display: flex;
+        flex-direction: column;
+    }
+    .smart-scroll-2>div:nth-of-type(1) {
+        display: flex;
+        flex-direction: row;
+    }
+    .smart-scroll-2>div:nth-of-type(2) {
+        display: none;
+    }
+    .shopNumber {
+        top: 23px;
+        right: 25px;
+    }
+    .smart-scroll-2>div>a:link {
+        color: black;
+    }
+    .smart-scroll-2>div:nth-of-type(1)>h2 {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: x-large;
+    }
+    .smart-scroll-2 h2,
+    .smart-scroll-2 p {
+        left: 0;
+        margin-left: 0;
+    }
+    .darkDiv>h2>a {
+        /* 沒有成功移到最前面 */
+        /* 沒有成功移到最前面 */
+        display: block;
+        text-align: center;
+        /* background-color: blue; */
+        color: black;
+        padding-top: 20px;
+        font-size: x-large;
+    }
+    .shopNumberTable {
+        width: 95vw;
+        /* margin-left: 20px; */
+        left: 10px;
+        box-sizing: border-box;
+    }
+    .shopNumberTable>table {
+        width: 75vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .smart-scroll-2.responsive>div:nth-of-type(2) {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.4rem;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        /* display: none; */
+    }
+    .smart-scroll-2.responsive>div:nth-of-type(2)>p {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        /* background-color: aqua; */
+    }
+}
+
+
+/*---- buttonDiv ----*/
+
+
+/*---- buttonDiv ----*/
+
+
+/*---- buttonDiv ----*/
+
+.buttonDiv {
+    /* margin-top: 150px; */
+    padding-top: 150px;
+    padding-right: 10px;
+    margin-bottom: 50px;
+    text-align: right;
+    animation-iteration-count: 0;
+}
+
+.buttonDiv>button:nth-of-type(1) {
+    padding-bottom: 2px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 50px 0px 0px 50px;
+    width: 35px;
+    color: gray;
+}
+
+.buttonDiv>button:nth-of-type(2) {
+    padding-bottom: 2px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 0 50px 50px 0;
+    width: 35px;
+    margin-left: -5px;
+    color: gray;
+}
+
+.buttonDiv>button:focus {
+    outline: 0;
+}
+.shoes_head{padding-bottom: 50px;}
+.shoes_head,
+.buttonDiv {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shoes_head>.card-deck>.card>h5 {
+    padding-top: 10px;
+}
+
+.shoes_head>.card-deck {
+    text-align: center;
+}
+
+.shoes_head>.card-deck>.card {
+    text-align: left;
+    flex-basis: 45%;
+    height: 55vw;
+    border: 0;
+    transform: translateY(200px);
+    transition: transform 1.5s;
+}
+.shoes_head>.card-deck>.card.shoesUp{
+    transform: translateY(0px);
+    transition: transform 1.5s;
+
+}
+
+.shoes_head>.card-deck>.card>a>.card-img-top {
+    height: 45vw;
+    object-fit: cover;
+}
+
+#card-change {
+    text-align: left;
+    flex-basis: 25%;
+    height: 38vw;
+}
+
+#card-img-top-change {
+    height: 30vw;
+}
+
+.alpha100 {
+    -webkit-animation: alpha100 2s infinite normal ease-in-out;
+    animation: alpha100 2s infinite normal ease-in-out;
+    animation-iteration-count: 1;
+    /* -webkit-animation-fill-mode: forwards; */
+    /* animation-fill-mode: forwards; */
+}
+
+@media screen and (min-width:700px) and (max-width:1200px) {
+    .shoes_head>.card-deck>.card {
+        height: 60vw;
+        /* background-color: lawngreen; */
+    }
+    #card-change {
+        height: 45vw;
+    }
+}
+
+@media (max-width:700px) {
+    .shoes_head>.card-deck>.card {
+        flex-basis: 70%;
+        height: 100vw;
+        /* background-color: lawngreen; */
+    }
+    .shoes_head>.card-deck>.card>a>.card-img-top {
+        height: 85vw;
+        object-fit: cover;
+    }
+    #card-change {
+        flex-basis: 30%;
+        display: inline-block;
+        /* flex-basis: 35%; */
+        /* margin-right: 10px; */
+        height: 60vw;
+        width: 40vw;
+        /* background-color: lawngreen; */
+    }
+    #card-change:not(:nth-child(odd)) {
+        /* background-color: lawngreen; */
+        margin-left: 1vw;
+    }
+    #card-img-top-change {
+        height: 40vw;
+    }
+}
+
+@-webkit-keyframes alpha100 {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes alpha100 {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+
+/* @media (min-width:1400px) {
+    .container {
+        max-width: 1300px
+    }
+} */
+
+
+/* ----------------第3頁product_page的css內容----------------- */
+
+
+/* ----------------第3頁product_page的css內容----------------- */
+
+
+/* ----------------第3頁product_page的css內容----------------- */
+
+
+/* ----------------第3頁product_page的css內容----------------- */
+
+
+/* ----------------第3頁product_page的css內容----------------- */
+
+
+/*---- 商品資訊頁處理 ----*/
+
+
+/*---- productDiv productDiv img ----*/
+
+
+/*---- productDiv productDiv img ----*/
+
+
+/*---- productDiv productDiv img ----*/
+
+.dropup .dropdown-toggle::after {
+    float: right;
+    margin-top: .500rem;
+}
+
+.productDiv>.row>.col-8 {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.productDiv>.row>.col-8>div>img {
+    width: 49.5%;
+    height: 35vw;
+    /* 在+與-運營商必須始終由空格包圍。 */
+    /* 在*與/運營商不需要的空白，但添加它的一致性是允許的 */
+    object-fit: cover;
+    margin-left: -5px;
+    margin-bottom: 10px;
+}
+
+.productDiv>.row>.col-8>div>img:nth-of-type(2n+1) {
+    margin-right: 10px;
+}
+
+.productDiv>.row>.col-8 {
+    overflow: hidden;
+}
+
+.productDiv>.row>.col-8>div {
+    animation: biggerImg 1s normal ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes biggerImg {
+    0% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.productDiv>.row>.col-4 {
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 150px;
+}
+
+.productDiv>.row>.col-4>span {
+    display: inline-block;
+    padding-top: 1rem;
+    line-height: 25px;
+}
+
+.productDiv>.row>.col-4>p {
+    /* margin-top: 1em; */
+    margin-bottom: 1.5rem;
+}
+
+.col-4>table {
+    margin-top: 30px;
+}
+
+.col-4 table tr td:nth-of-type(1) {
+    vertical-align: text-top;
+}
+
+.col-4 table tr td:nth-of-type(2) {
+    padding-left: 10px;
+    font-size: smaller;
+}
+
+form>.btn-dark {
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .productDiv>.row>.col-8 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        /* height: 60vh; */
+    }
+    .productDiv>.row>.col-8>div>img {
+        width: 100%;
+        height: 60vh;
+        object-fit: cover;
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
+    .productDiv>.row>.col-8>div>img:nth-of-type(2n+1) {
+        margin-right: 0px;
+    }
+    .productDiv>.row>.col-4>h3 {
+        font-size: medium;
+        display: inline-block;
+        padding-right: 10px;
+    }
+    .productDiv>.row>.col-4>span:nth-of-type(1),
+    .productDiv>.row>.col-4>span:nth-of-type(2) {
+        font-size: medium;
+        padding-top: 0;
+        /* line-height: 25px; */
+    }
+    .productDiv>.row>.col-4>span:nth-of-type(3) {
+        font-size: smaller;
+        padding-top: 0;
+    }
+    .productDiv>.row>.col-4 {
+        position: fixed;
+        text-align: center;
+        padding: 0;
+        padding-bottom: 20px;
+        bottom: 0;
+        background-color: white;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-top: 20px;
+        z-index: 1020;
+    }
+    .productDiv>.row>.col-4>span:nth-of-type(4),
+    .productDiv>.row>.col-4>p,
+    .col-4>table {
+        display: none;
+    }
+    .productDiv>.row>.col-4>form {
+        width: 70vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* ----------------第4頁bag_page的css內容----------------- */
+
+
+/* ----------------第4頁bag_page的css內容----------------- */
+
+
+/* ----------------第4頁bag_page的css內容----------------- */
+
+
+/* ----------------第4頁bag_page的css內容----------------- */
+
+
+/* ----------------第4頁bag_page的css內容----------------- */
+
+.table td,
+.table th {
+    padding: .75rem;
+    border-top: 0px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid gray
+}
+.bag-right-item>form>.table td,
+.bag-right-item>form>.table td{
+    vertical-align: top;
+}
+
+.bag-right-item>form>.table>tbody>tr>th {
+    font-weight: normal;
+}
+
+.bag-right-item>form>.table>tbody>tr {
+    line-height: 3;
+    /* background-color: chartreuse; */
+}
+
+.bag-left-item {
+    margin-top: 100px;
+    position: fixed;
+    z-index: 1010;
+    background-color: #fff;
+    width: 20vw;
+    height: 100px;
+    padding-top: 25px;
+    padding-left: 50px;
+    /* color:black; */
+}
+
+.bag-right-item {
+    padding-top: 130px;
+    width: 100%;
+    height: 120vh;
+    font-size: smaller;
+    padding-right: 50px;
+    /* color:black; */
+}
+
+.bag-right-item>p {
+    padding-left: 28vw;
+}
+
+.bag-right-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.bag-right-item>form>input {
+    margin-left: 28vw;
+}
+
+.bag-right-item button {
+    width: 30vw;
+    float: right;
+}
+
+.bag-right-item>form>span:not(:nth-of-type(1)) {
+    /* display: inline-block; */
+    /* background-color: crimson; */
+    float: right;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.bag-right-item>form>table:nth-of-type(1) {
+    width: 68vw;
+    margin-left: auto;
+}
+
+.bag-right-item>form>table:nth-of-type(2) {
+    display: none;
+}
+
+.bag-right-item>form>table:nth-of-type(3) {
+    width: 30vw;
+    margin-left: auto;
+    clear: both;
+    /* background-color: blueviolet; */
+}
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+    .bag-left-item {
+        position: sticky;
+        /* 這個值好像會導致darkDiv崩潰 */
+        width: 50vw;
+        margin-top: 0;
+        padding-top: 80px;
+        padding-bottom: 50px;
+        padding-left: 30px;
+    }
+    .bag-right-item>form>input {
+        margin-left: 50px;
+    }
+    .bag-right-item {
+        padding-top: 50px;
+        padding-right: 30px;
+    }
+    .bag-right-item>p {
+        padding-left: 50px;
+    }
+    .bag-right-item>form>table:nth-of-type(1) {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .table>tbody>tr>td:not(:nth-last-of-type(1)),
+    .table>thead>tr>th:nth-of-type(2),
+    .table>thead>tr>th:nth-of-type(3),
+    .table>thead>tr>th:nth-of-type(4) {
+        display: none;
+    }
+    .bag-left-item {
+        position: sticky;
+        /* 這個值好像會導致darkDiv崩潰 */
+        width: 50vw;
+        margin-top: 0px;
+        /* background-color:aqua; */
+        padding-top: 70px;
+        padding-bottom: 40px;
+        padding-left: 30px;
+    }
+    .bag-left-item>h6 {
+        display: none;
+    }
+    .bag-right-item {
+        padding-top: 50px;
+        padding-left: 20px;
+    }
+    .bag-right-item>p {
+        padding-left: 50px;
+    }
+    .bag-right-item>form>table:nth-of-type(1) {
+        width: 90vw;
+        /* background-color: blueviolet; */
+        /* margin-left: 0; */
+    }
+    .bag-right-item>form>table:nth-of-type(2) {
+        /* background-color: blueviolet; */
+        clear: both;
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90vw;
+        /* 會超出去 */
+        box-sizing: content-box;
+        /* background-color: aquamarine; */
+    }
+    .bag-right-item>form>table:nth-of-type(2)>tbody>tr>th {
+        text-align: left;
+        width: 77%;
+        padding-left: 10vw;
+    }
+    .bag-right-item>form>table:nth-of-type(2)>tbody>tr>td {
+        text-align: left;
+        padding-right: 10vw;
+    }
+    .bag-right-item>form>table:nth-of-type(3),
+    .bag-right-item>form>span:not(:nth-of-type(1)) {
+        display: none;
+    }
+    .bag-right-item>form>button {
+        margin-top: 70px;
+        text-align: center;
+        width: 80vw;
+    }
+    .bag-right-item button {
+        float: none;
+    }
+    .bag-right-item>form>input {
+        margin-left: 50px;
+    }
+}
